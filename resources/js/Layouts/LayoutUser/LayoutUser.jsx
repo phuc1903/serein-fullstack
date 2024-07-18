@@ -1,7 +1,22 @@
+import React, {useState} from "react";
 
+import SvgImage from "../../Component/ImageSvg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
+import SearchPop from "../../Component/SearchPop";
 function LayoutUser({ children }) {
+
+    const [isVisible,setIsVisible] = useState(false);
+
+    const toggleSearchPopup = (event) => {
+        event.preventDefault();
+        setIsVisible(!isVisible);
+    }
+
     return (
         <>
+            <SvgImage />
+            <SearchPop addClass={isVisible ? "is-visible" : ""}/>
             <header className="container-fluid">
                 <div className="container h-100">
                     <nav
@@ -11,7 +26,7 @@ function LayoutUser({ children }) {
                         <div className="container-fluid h-100">
                             <a className="navbar-brand h-100 logo" href="#">
                                 <img
-                                    src="img/logo3.png"
+                                    src="images/logo3.png"
                                     alt=""
                                     className="d-inline-block align-text-top h-100 w-100"
                                 />
@@ -86,12 +101,18 @@ function LayoutUser({ children }) {
                                         </ul>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="about.html">
+                                        <a
+                                            className="nav-link"
+                                            href="about.html"
+                                        >
                                             about
                                         </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="contact.html">
+                                        <a
+                                            className="nav-link"
+                                            href="contact.html"
+                                        >
                                             contact
                                         </a>
                                     </li>
@@ -115,12 +136,18 @@ function LayoutUser({ children }) {
                                             aria-labelledby="navbarUser"
                                         >
                                             <li>
-                                                <a className="dropdown-item" href="#">
+                                                <a
+                                                    className="dropdown-item"
+                                                    href="#"
+                                                >
                                                     Action
                                                 </a>
                                             </li>
                                             <li>
-                                                <a className="dropdown-item" href="#">
+                                                <a
+                                                    className="dropdown-item"
+                                                    href="#"
+                                                >
                                                     Another action
                                                 </a>
                                             </li>
@@ -128,21 +155,32 @@ function LayoutUser({ children }) {
                                                 <hr className="dropdown-divider" />
                                             </li>
                                             <li>
-                                                <a className="dropdown-item" href="#">
+                                                <a
+                                                    className="dropdown-item"
+                                                    href="#"
+                                                >
                                                     Something else here
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li className="nav-item search-button">
-                                        <a href="#" className="nav-link nav-link-icon">
-                                            <i className="fa-solid fa-magnifying-glass search">
+                                    <li onClick={toggleSearchPopup} className="nav-item search-button">
+                                        <a
+                                            href="#"
+                                            className="nav-link nav-link-icon"
+                                        >
+                                            <FontAwesomeIcon
+                                                icon={faMagnifyingGlass}
+                                            >
                                                 <use xlinkHref="#search"></use>
-                                            </i>
+                                            </FontAwesomeIcon>
                                         </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link nav-link-icon" href="#">
+                                        <a
+                                            className="nav-link nav-link-icon"
+                                            href="#"
+                                        >
                                             <i className="fa-solid fa-cart-shopping"></i>
                                         </a>
                                     </li>
@@ -153,9 +191,7 @@ function LayoutUser({ children }) {
                 </div>
             </header>
 
-            <main>
-                {children}
-            </main>
+            <main>{children}</main>
 
             <footer id="footer" className="overflow-hidden">
                 <div className="container">
@@ -164,9 +200,16 @@ function LayoutUser({ children }) {
                             <div className="row d-flex flex-wrap justify-content-between">
                                 <div className="col-lg-3 col-sm-6 pb-3">
                                     <div className="footer-menu">
-                                        <img src="images/main-logo.png" alt="logo"/>
-                                        <p>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida massa
-                                            volutpat aenean odio erat nullam fringilla.</p>
+                                        <img
+                                            src="images/main-logo.png"
+                                            alt="logo"
+                                        />
+                                        <p>
+                                            Nisi, purus vitae, ultrices nunc.
+                                            Sit ac sit suscipit hendrerit.
+                                            Gravida massa volutpat aenean odio
+                                            erat nullam fringilla.
+                                        </p>
                                         <div className="social-links">
                                             <ul className="d-flex list-unstyled">
                                                 <li>
@@ -210,7 +253,9 @@ function LayoutUser({ children }) {
                                 </div>
                                 <div className="col-lg-2 col-sm-6 pb-3">
                                     <div className="footer-menu text-uppercase">
-                                        <h5 className="widget-title pb-2">Quick Links</h5>
+                                        <h5 className="widget-title pb-2">
+                                            Quick Links
+                                        </h5>
                                         <ul className="menu-list list-unstyled text-uppercase">
                                             <li className="menu-item pb-2">
                                                 <a href="#">Home</a>
@@ -232,7 +277,9 @@ function LayoutUser({ children }) {
                                 </div>
                                 <div className="col-lg-3 col-sm-6 pb-3">
                                     <div className="footer-menu text-uppercase">
-                                        <h5 className="widget-title pb-2">Help & Info Help</h5>
+                                        <h5 className="widget-title pb-2">
+                                            Help & Info Help
+                                        </h5>
                                         <ul className="menu-list list-unstyled">
                                             <li className="menu-item pb-2">
                                                 <a href="#">Track Your Order</a>
@@ -241,7 +288,9 @@ function LayoutUser({ children }) {
                                                 <a href="#">Returns Policies</a>
                                             </li>
                                             <li className="menu-item pb-2">
-                                                <a href="#">Shipping + Delivery</a>
+                                                <a href="#">
+                                                    Shipping + Delivery
+                                                </a>
                                             </li>
                                             <li className="menu-item pb-2">
                                                 <a href="#">Contact Us</a>
@@ -254,10 +303,20 @@ function LayoutUser({ children }) {
                                 </div>
                                 <div className="col-lg-3 col-sm-6 pb-3">
                                     <div className="footer-menu contact-item">
-                                        <h5 className="widget-title text-uppercase pb-2">Contact Us</h5>
-                                        <p>Do you have any queries or suggestions? <a href="mailto:">yourinfo@gmail.com</a>
+                                        <h5 className="widget-title text-uppercase pb-2">
+                                            Contact Us
+                                        </h5>
+                                        <p>
+                                            Do you have any queries or
+                                            suggestions?{" "}
+                                            <a href="mailto:">
+                                                yourinfo@gmail.com
+                                            </a>
                                         </p>
-                                        <p>If you need support? Just give us a call. <a href="">+55 111 222 333 44</a>
+                                        <p>
+                                            If you need support? Just give us a
+                                            call.{" "}
+                                            <a href="">+55 111 222 333 44</a>
                                         </p>
                                     </div>
                                 </div>
@@ -265,7 +324,7 @@ function LayoutUser({ children }) {
                         </div>
                     </div>
                 </div>
-                <hr/>
+                <hr />
             </footer>
 
             <div id="footer-bottom">
@@ -275,8 +334,11 @@ function LayoutUser({ children }) {
                             <div className="Shipping d-flex">
                                 <p>We ship with:</p>
                                 <div className="card-wrap ps-2">
-                                    <img src="images/dhl.png" alt="visa"/>
-                                    <img src="images/shippingcard.png" alt="mastercard"/>
+                                    <img src="images/dhl.png" alt="visa" />
+                                    <img
+                                        src="images/shippingcard.png"
+                                        alt="mastercard"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -284,16 +346,22 @@ function LayoutUser({ children }) {
                             <div className="payment-method d-flex">
                                 <p>Payment options:</p>
                                 <div className="card-wrap ps-2">
-                                    <img src="images/visa.jpg" alt="visa"/>
-                                    <img src="images/mastercard.jpg" alt="mastercard"/>
-                                    <img src="images/paypal.jpg" alt="paypal"/>
+                                    <img src="images/visa.jpg" alt="visa" />
+                                    <img
+                                        src="images/mastercard.jpg"
+                                        alt="mastercard"
+                                    />
+                                    <img src="images/paypal.jpg" alt="paypal" />
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4 col-sm-6">
                             <div className="copyright">
-                                <p>© Copyright 2023 MiniStore. Design by <a
-                                        href="https://templatesjungle.com/">TemplatesJungle</a>
+                                <p>
+                                    © Copyright 2023 MiniStore. Design by{" "}
+                                    <a href="https://templatesjungle.com/">
+                                        TemplatesJungle
+                                    </a>
                                 </p>
                             </div>
                         </div>

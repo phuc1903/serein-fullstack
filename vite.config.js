@@ -9,7 +9,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/js/app.jsx',
-                'resources/css/app.css'
+                'resources/css/app.css',
+                'public/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/all.min.css'
             ],
             refresh: true,
         }),
