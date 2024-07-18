@@ -1,0 +1,6 @@
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import './CustomCss/customStyle.css';
+@import './CustomCss/style.css';
+@import './CustomCss/core.css';
+@import './CustomCss/theme-default.css';
