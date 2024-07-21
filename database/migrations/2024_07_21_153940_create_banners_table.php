@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('collection',40)->nullable();
             $table->string('title',50)->nullable();
-            $table->string('des',255)->nullable();
+            $table->string('description',255)->nullable();
             $table->string('link', 255)->nullable();
-            $table->string('img', 255)->nullable();
+            $table->string('image', 255)->nullable();
             $table->boolean('banner_show')->default(true)->nullable();
             $table->string('action', 30)->nullable();
             $table->string('background', 255)->nullable();
