@@ -15,6 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('avatar',255)->default('Public/img/default.jpg')->nullable();
+            $table->set('role', ['user', 'admin'])->default('user');
+            $table->integer('phone',20)->nullable();
+            $table->string('address',150)->nullable();
+            $table->set('sex', ['Nam', 'Nữ', 'Chưa biết'])->default('Chưa biết');
+            $table->string('slug',255)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

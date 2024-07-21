@@ -168,7 +168,7 @@ header {
 
 .product-list-show .product-item .product-item-name {
     color: #272727;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -178,7 +178,7 @@ header {
 
 .product-list-show .product-item .product-item-price a {
     color: var(--main-new);
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -215,7 +215,7 @@ header {
     color: var(--white-color);
     line-height: 50px;
     padding: 0 24px;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     cursor: pointer;
     transition: var(--transition);
     border: none;

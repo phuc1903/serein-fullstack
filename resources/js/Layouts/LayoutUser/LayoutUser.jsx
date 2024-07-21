@@ -1,10 +1,15 @@
 import React, {useState} from "react";
+import clsx from 'clsx';
 
+import styles from './LayoutUserStyle.module.scss';
 import SvgImage from "../../Component/ImageSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
 import SearchPop from "../../Component/SearchPop";
+
 function LayoutUser({ children }) {
+
+    const classes = clsx(styles.test)
 
     const [isVisible,setIsVisible] = useState(false);
 
@@ -13,10 +18,14 @@ function LayoutUser({ children }) {
         setIsVisible(!isVisible);
     }
 
+    const closeSearchPopup = () => {
+        setIsVisible(false);
+    }
+
     return (
         <>
             <SvgImage />
-            <SearchPop addClass={isVisible ? "is-visible" : ""}/>
+            <SearchPop addClass={isVisible ? "is-visible" : ""} onClose={closeSearchPopup}/>
             <header className="container-fluid">
                 <div className="container h-100">
                     <nav
@@ -190,6 +199,7 @@ function LayoutUser({ children }) {
                     </nav>
                 </div>
             </header>
+
 
             <main>{children}</main>
 

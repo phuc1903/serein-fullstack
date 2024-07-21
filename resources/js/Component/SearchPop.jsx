@@ -1,8 +1,20 @@
+import React, {useState} from 'react';
 
-function SearchPop({addClass}) {
+function SearchPop({addClass, onClose}) {
+
+    const handlePopupClick = (event) => {
+        if (
+            event.target.classList.contains('search-popup-close') ||
+            event.target.closest('.search-popup-close') ||
+            event.target.classList.contains('search-popup')
+        ) {
+            event.preventDefault();
+            onClose();
+        }
+    }
 
     return (
-        <div className={`search-popup ${addClass}`}>
+        <div className={`search-popup ${addClass}`} onClick={handlePopupClick}>
             <div className="search-popup-container">
                 <form role="search" method="get" className="search-form" action="">
                     <input
