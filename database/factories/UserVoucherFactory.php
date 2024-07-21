@@ -17,7 +17,9 @@ class UserVoucherFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => \App\Models\User::factory(),
+            'voucher_id' => \App\Models\Voucher::factory(),
+            'quantity' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

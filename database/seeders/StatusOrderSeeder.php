@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\StatusOrder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class StatusOrderSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        StatusOrder::factory()->count(20)->create();
     }
 }

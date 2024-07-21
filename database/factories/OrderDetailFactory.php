@@ -17,7 +17,10 @@ class OrderDetailFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'quantity' => $this->faker->numberBetween(1, 10),
+            'product_price' => $this->faker->numberBetween(1000, 10000),
+            'order_id' => \App\Models\Order::factory(),
+            'product_id' => \App\Models\Product::factory(),
         ];
     }
 }

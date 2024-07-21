@@ -17,7 +17,14 @@ class BannerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'collection' => $this->faker->word,
+            'title' => $this->faker->text(50),
+            'description' => $this->faker->paragraph,
+            'link' => $this->faker->url,
+            'image' => $this->faker->imageUrl,
+            'banner_show' => true,
+            'action' => $this->faker->word,
+            'background' => $this->faker->hexColor,
         ];
     }
 }

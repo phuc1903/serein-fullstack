@@ -17,7 +17,8 @@ class StatusOrderFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'order_id' => \App\Models\Order::factory(),
+            'status_id' => \App\Models\Status::factory(),
         ];
     }
 }

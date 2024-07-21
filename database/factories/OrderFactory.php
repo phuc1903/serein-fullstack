@@ -17,7 +17,10 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'total_amount' => $this->faker->numberBetween(1000, 10000),
+            'product_quantity' => $this->faker->numberBetween(1, 10),
+            'user_id' => \App\Models\User::factory(),
+            'voucher_id' => \App\Models\Voucher::factory(),
         ];
     }
 }

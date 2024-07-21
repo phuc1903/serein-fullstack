@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\UserVoucher;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class UserVoucherSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        UserVoucher::factory()->count(10)->create();
     }
 }
