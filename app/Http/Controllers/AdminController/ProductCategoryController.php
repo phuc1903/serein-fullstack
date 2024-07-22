@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\AdminControllers;
 
-use App\Models\UserVoucher;
-use App\Http\Requests\StoreUserVoucherRequest;
-use App\Http\Requests\UpdateUserVoucherRequest;
+use App\Http\Controllers\Controller;
+use App\Models\ProductCategory;
+use App\Http\Requests\StoreProductCategoryRequest;
+use App\Http\Requests\UpdateProductCategoryRequest;
 
-class UserVoucherController extends Controller
+class ProductCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class UserVoucherController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreUserVoucherRequest $request)
+    public function store(StoreProductCategoryRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class UserVoucherController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(UserVoucher $userVoucher)
+    public function show(ProductCategory $productCategory)
     {
         //
     }
@@ -43,7 +44,7 @@ class UserVoucherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(UserVoucher $userVoucher)
+    public function edit(ProductCategory $productCategory)
     {
         //
     }
@@ -51,7 +52,7 @@ class UserVoucherController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserVoucherRequest $request, UserVoucher $userVoucher)
+    public function update(UpdateProductCategoryRequest $request, ProductCategory $productCategory)
     {
         //
     }
@@ -59,7 +60,7 @@ class UserVoucherController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(UserVoucher $userVoucher)
+    public function destroy(ProductCategory $productCategory)
     {
         //
     }

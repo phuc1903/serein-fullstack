@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+
+import { Link } from "@inertiajs/react";
+import { useEffect, useState } from "react";
 
 function SearchPop({addClass, onClose}) {
 
@@ -13,6 +15,17 @@ function SearchPop({addClass, onClose}) {
         }
     }
 
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        fetch('http://127.0.0.1:8000/api/category')
+            .then(response => response.json())
+            .then(data => setCategories(data.categories))
+            .catch(error => console.error('Error fetching categories:', error));
+    }, []);
+
+    const [search, setSearch] = useState("");
+
     return (
         <div className={`search-popup ${addClass}`} onClick={handlePopupClick}>
             <div className="search-popup-container">
@@ -22,8 +35,9 @@ function SearchPop({addClass, onClose}) {
                         id="search-form"
                         className="search-field"
                         placeholder="Nhập tìm kiếm của bạn"
-                        value=""
-                        name="s"
+                        value={search}
+                        // name="s"
+                        onChange={e => setSearch(e.target.value)}
                     />
                     <button type="submit" className="search-submit">
                         <svg className="search">
@@ -36,41 +50,15 @@ function SearchPop({addClass, onClose}) {
 
                 <ul className="cat-list">
                     {/* List Categories */}
-                    <li className="cat-list-item">
-                        <a href="#" title="Mobile Phones">
-                            Mobile Phones
-                        </a>
-                    </li>
-                    <li className="cat-list-item">
-                        <a href="#" title="Smart Watches">
-                            Smart Watches
-                        </a>
-                    </li>
-                    <li className="cat-list-item">
-                        <a href="#" title="Headphones">
-                            Headphones
-                        </a>
-                    </li>
-                    <li className="cat-list-item">
-                        <a href="#" title="Accessories">
-                            Accessories
-                        </a>
-                    </li>
-                    <li className="cat-list-item">
-                        <a href="#" title="Monitors">
-                            Monitors
-                        </a>
-                    </li>
-                    <li className="cat-list-item">
-                        <a href="#" title="Speakers">
-                            Speakers
-                        </a>
-                    </li>
-                    <li className="cat-list-item">
-                        <a href="#" title="Memory Cards">
-                            Memory Cards
-                        </a>
-                    </li>
+                    {categories.map(cate => {
+                        return (
+                            <li key={cate.id} className="cat-list-item">
+                                <Link title="Mobile Phones">
+                                    {cate.name}
+                                </Link>
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
         </div>

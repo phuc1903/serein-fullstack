@@ -1,11 +1,12 @@
 import React, {useState} from "react";
+import { Link } from "@inertiajs/react";
 import clsx from 'clsx';
 
 import styles from './LayoutUserStyle.module.scss';
-import SvgImage from "../../Component/ImageSvg";
+import SvgImage from "@/Component/ImageSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
-import SearchPop from "../../Component/SearchPop";
+import SearchPop from "@/Component/SearchPop";
 
 function LayoutUser({ children }) {
 
@@ -33,13 +34,13 @@ function LayoutUser({ children }) {
                         className="navbar navbar-expand-lg navbar-light h-100"
                     >
                         <div className="container-fluid h-100">
-                            <a className="navbar-brand h-100 logo" href="#">
+                            <Link className="navbar-brand h-100 logo" href="#">
                                 <img
                                     src="images/logo3.png"
                                     alt=""
                                     className="d-inline-block align-text-top h-100 w-100"
                                 />
-                            </a>
+                            </Link>
                             <button
                                 className="navbar-toggler"
                                 type="button"
@@ -57,16 +58,16 @@ function LayoutUser({ children }) {
                             >
                                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
                                     <li className="nav-item">
-                                        <a
+                                        <Link
                                             className="nav-link active"
                                             aria-current="page"
                                             href="index.html"
                                         >
                                             Home
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item dropdown">
-                                        <a
+                                        <Link
                                             className="nav-link dropdown-toggle"
                                             href="shop.html"
                                             id="navbarShop"
@@ -75,60 +76,60 @@ function LayoutUser({ children }) {
                                             aria-expanded="false"
                                         >
                                             shop
-                                        </a>
+                                        </Link>
                                         <ul
                                             className="dropdown-menu"
                                             aria-labelledby="navbarShop"
                                         >
                                             <li>
-                                                <a
+                                                <Link
                                                     className="dropdown-item"
                                                     href="shop.html"
                                                 >
                                                     Action
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
+                                                <Link
                                                     className="dropdown-item"
                                                     href="shop.html"
                                                 >
                                                     Another action
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <hr className="dropdown-divider" />
                                             </li>
                                             <li>
-                                                <a
+                                                <Link
                                                     className="dropdown-item"
                                                     href="shop.html"
                                                 >
                                                     Something else here
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </li>
                                     <li className="nav-item">
-                                        <a
+                                        <Link
                                             className="nav-link"
                                             href="about.html"
                                         >
                                             about
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a
+                                        <Link
                                             className="nav-link"
                                             href="contact.html"
                                         >
                                             contact
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav d-flex flex-row">
                                     <li className="nav-item dropdown">
-                                        <a
+                                        <Link
                                             className="nav-link"
                                             aria-current="page"
                                             href="#"
@@ -139,42 +140,42 @@ function LayoutUser({ children }) {
                                         >
                                             <i className="fa-regular fa-user d-ms-none"></i>
                                             {/* <img className="rounded-circle w-25 h-25" src="img/default.jpg" alt=""/> */}
-                                        </a>
+                                        </Link>
                                         <ul
                                             className="dropdown-menu"
                                             aria-labelledby="navbarUser"
                                         >
                                             <li>
-                                                <a
+                                                <Link
                                                     className="dropdown-item"
                                                     href="#"
                                                 >
                                                     Action
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
+                                                <Link
                                                     className="dropdown-item"
                                                     href="#"
                                                 >
                                                     Another action
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <hr className="dropdown-divider" />
                                             </li>
                                             <li>
-                                                <a
+                                                <Link
                                                     className="dropdown-item"
                                                     href="#"
                                                 >
                                                     Something else here
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </li>
                                     <li onClick={toggleSearchPopup} className="nav-item search-button">
-                                        <a
+                                        <Link
                                             href="#"
                                             className="nav-link nav-link-icon"
                                         >
@@ -183,15 +184,15 @@ function LayoutUser({ children }) {
                                             >
                                                 <use xlinkHref="#search"></use>
                                             </FontAwesomeIcon>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a
+                                        <Link
                                             className="nav-link nav-link-icon"
                                             href="#"
                                         >
                                             <i className="fa-solid fa-cart-shopping"></i>
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>

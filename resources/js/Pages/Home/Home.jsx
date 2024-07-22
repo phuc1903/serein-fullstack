@@ -15,7 +15,7 @@ import { Link } from "@inertiajs/react";
 import SvgImage from "@/Component/ImageSvg";
 import Product from "@/Component/Product";
 
-function Home() {
+function Home({productNews, productBestsellers}) {
     return (
         <>
             <SvgImage/>
@@ -29,7 +29,7 @@ function Home() {
                         <div className="product-section">
                             <h3 className="h3-product-section">Sản phẩm mới</h3>
                             <span>
-                                <Link href="shop.html">Đi đến shop</Link>
+                                <Link>Đi đến shop</Link>
                             </span>
                         </div>
                         <Swiper
@@ -40,21 +40,45 @@ function Home() {
                             modules={[Pagination]}
                             slidesPerView={4}
                         >
-                            <SwiperSlide>
-                                <Product data={{title: "phucs", price: "200"}}/>
+                        {productNews.map(product => {
+                            return (
+                            <SwiperSlide key={product.id}>
+                                <Product data={product}/>
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <Product data={{title: "phucs", price: "200"}}/>
+                            );
+                        })}
+                        </Swiper>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                className="product-list-show product-store position-relative padding-large no-padding-top"
+                id="product-news"
+            >
+                <div className="container">
+                    <div className="row">
+                        <div className="product-section">
+                            <h3 className="h3-product-section">Sản phẩm bán chạy</h3>
+                            <span>
+                                <Link>Đi đến shop</Link>
+                            </span>
+                        </div>
+                        <Swiper
+                            className="mySwiper product-swiper"
+                            pagination={{
+                                dynamicBullets: true,
+                            }}
+                            modules={[Pagination]}
+                            slidesPerView={4}
+                        >
+                        {productBestsellers.map(product => {
+                            return (
+                            <SwiperSlide key={product.id}>
+                                <Product data={product}/>
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <Product data={{title: "phucs", price: "200"}}/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Product data={{title: "phucs", price: "200"}}/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Product data={{title: "phucs", price: "200"}}/>
-                            </SwiperSlide>
+                            );
+                        })}
                         </Swiper>
                     </div>
                 </div>

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\AdminControllers;
 
-use App\Models\Status;
-use App\Http\Requests\StoreStatusRequest;
-use App\Http\Requests\UpdateStatusRequest;
+use App\Http\Controllers\Controller;
+use App\Models\StatusOrder;
+use App\Http\Requests\StoreStatusOrderRequest;
+use App\Http\Requests\UpdateStatusOrderRequest;
 
-class StatusController extends Controller
+class StatusOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class StatusController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStatusRequest $request)
+    public function store(StoreStatusOrderRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class StatusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Status $status)
+    public function show(StatusOrder $statusOrder)
     {
         //
     }
@@ -43,7 +44,7 @@ class StatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Status $status)
+    public function edit(StatusOrder $statusOrder)
     {
         //
     }
@@ -51,7 +52,7 @@ class StatusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStatusRequest $request, Status $status)
+    public function update(UpdateStatusOrderRequest $request, StatusOrder $statusOrder)
     {
         //
     }
@@ -59,7 +60,7 @@ class StatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Status $status)
+    public function destroy(StatusOrder $statusOrder)
     {
         //
     }
