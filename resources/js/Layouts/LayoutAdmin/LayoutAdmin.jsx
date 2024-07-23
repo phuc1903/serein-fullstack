@@ -223,7 +223,9 @@ function LayoutAdmin({ children }) {
                             </div>
                         </div>
                     </div>
-                    {children}
+                    <div className="main-admin col-lg-9 col-md-8 mb-5">
+                        {children}
+                    </div>
                 </div>
             </div>
         </main>

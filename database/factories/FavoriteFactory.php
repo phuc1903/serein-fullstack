@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use App\Models\User;
-use App\Models\Voucher;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserVoucher>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Favorite>
  */
-class UserVoucherFactory extends Factory
+class FavoriteFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,8 +20,7 @@ class UserVoucherFactory extends Factory
     {
         return [
             'user_id' => User::inRandomOrder()->first()->id,
-            'voucher_id' => Voucher::inRandomOrder()->first()->id,
-            'quantity' => $this->faker->numberBetween(1, 10),
+            'product_id' => Product::inRandomOrder()->first()->id,
         ];
     }
 }

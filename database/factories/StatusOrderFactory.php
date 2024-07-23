@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Order;
+use App\Models\Status;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +19,8 @@ class StatusOrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'order_id' => \App\Models\Order::factory(),
-            'status_id' => \App\Models\Status::factory(),
+            'order_id' => Order::factory()->create(),
+            'status_id' => Status::factory(),
         ];
     }
 }

@@ -1,0 +1,23 @@
+.wrapper {
+    min-height: 200px;
+    margin: 160px 0;
+    padding: 24px;
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+}
+
+.button {
+    padding: 6px 12px;
+    border: 1px solid var(--main-new);
+    color: var(--main-new);
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background: none;
+    transition: var(--transition);
+
+    &:hover {
+        background-color: var(--main-new);
+        color: var(--white-color);
+    }
+}

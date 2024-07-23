@@ -14,6 +14,6 @@ class HomeController extends Controller
 
         $productNews = Product::latest()->limit(10)->get();
         // dd($productNews);
-        return inertia('Home/Home', ['productNews' => $productNews, 'productBestsellers' => $productSellers]); 
+        return inertia('User/Home/Index', ['productNews' => $productNews, 'productBestsellers' => $productSellers]); 
     }
 }

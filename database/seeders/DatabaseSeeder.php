@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             StatusSeeder::class,
             StatusOrderSeeder::class,
             UserVoucherSeeder::class,
+            FavoriteSeeder::class,
         ]);
     }
 }
