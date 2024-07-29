@@ -45,13 +45,16 @@ class AuthController extends Controller
     // Page Đăng nhập
     public function login()
     {
+        // if(Auth::check()){
+        //     dd(Auth::user());
+        // }
         return inertia('User/Auth/Login/Index');
     }
     
     // Handler đăng nhập
     public function loginStore(StoreLoginRequest $request)
     {
-        // dd('đâs');
+        // dd($request);
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password])) {
             // $favoritesByUser = Auth::user()->favorites;
             // if ($favoritesByUser) {
@@ -64,6 +67,7 @@ class AuthController extends Controller
             // dd('no ok');
             return back()->withErrors(['fail' => 'Email hoặc mật khẩu sai'])->with('error', 'Đăng nhập thất bại');
         }
+
     }
 
     // Page đăng ký

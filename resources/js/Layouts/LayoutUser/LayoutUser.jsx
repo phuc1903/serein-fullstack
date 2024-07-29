@@ -7,6 +7,7 @@ import SvgImage from "@/Component/ImageSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
 import SearchPop from "@/Component/SearchPop";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 function LayoutUser({ children }) {
 
@@ -129,49 +130,14 @@ function LayoutUser({ children }) {
                                 </ul>
                                 <ul className="navbar-nav d-flex flex-row">
                                     <li className="nav-item dropdown">
-                                        <Link
-                                            className="nav-link"
-                                            aria-current="page"
-                                            href="#"
-                                            id="navbarUser"
-                                            role="button"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded="false"
-                                        >
-                                            <i className="fa-regular fa-user d-ms-none"></i>
-                                            {/* <img className="rounded-circle w-25 h-25" src="img/default.jpg" alt=""/> */}
-                                        </Link>
-                                        <ul
-                                            className="dropdown-menu"
-                                            aria-labelledby="navbarUser"
-                                        >
-                                            <li>
-                                                <Link
-                                                    className="dropdown-item"
-                                                    href="#"
-                                                >
-                                                    Action
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="dropdown-item"
-                                                    href="#"
-                                                >
-                                                    Another action
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <hr className="dropdown-divider" />
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="dropdown-item"
-                                                    href="#"
-                                                >
-                                                    Something else here
-                                                </Link>
-                                            </li>
+                                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Dropdown
+                                        </a>
+                                        <ul className="dropdown-menu">
+                                            <li><a className="dropdown-item" href="#">Action</a></li>
+                                            <li><a className="dropdown-item" href="#">Another action</a></li>
+                                            <li><hr className="dropdown-divider"/></li>
+                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
                                         </ul>
                                     </li>
                                     <li onClick={toggleSearchPopup} className="nav-item search-button">

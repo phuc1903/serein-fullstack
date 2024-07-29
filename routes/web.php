@@ -9,12 +9,15 @@ use App\Http\Controllers\UserController\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+
 Route::controller(InfoController::class)->group(function() {
-    Route::get('/info', [InfoController::class, 'index'])->name('info');
+    Route::get('/info', [InfoController::class, 'index'])->middleware('checkAuth')->name('info');
 });
+
+
 Route::put('/info/{user}', [InfoController::class, 'update'])->name('info/update');
 
 Route::inertia('/about', 'About/Index')->name('home');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'loginStore'])->name('login.store');
+Route::post('/login', [AuthController::class, 'loginStore'])->name('login-store');
