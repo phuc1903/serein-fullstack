@@ -51,16 +51,18 @@ class AuthController extends Controller
     // Handler đăng nhập
     public function loginStore(StoreLoginRequest $request)
     {
-        // Xác thực người dùng
+        // dd('đâs');
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password])) {
             // $favoritesByUser = Auth::user()->favorites;
             // if ($favoritesByUser) {
             //     $totalFavorites = count($favoritesByUser);
             //     session()->put('totalFavorites', $totalFavorites);
-            // }
-            return redirect()->route('home')->with('success', 'Đăng nhập thành công');
+            // } 
+            // dd('ok');
+            return redirect('/');
         } else {
-            return back()->withErrors(['email' => 'Email hoặc mật khẩu sai'])->with('error', 'Đăng nhập thất bại');
+            // dd('no ok');
+            return back()->withErrors(['fail' => 'Email hoặc mật khẩu sai'])->with('error', 'Đăng nhập thất bại');
         }
     }
 
@@ -85,7 +87,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        dispatch(new SendCreateAccountMailJob($user));
+        // dispatch(new SendCreateAccountMailJob($user));
 
         Auth::login($user);
 
