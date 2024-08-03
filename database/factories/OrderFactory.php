@@ -21,6 +21,7 @@ class OrderFactory extends Factory
             'product_quantity' => $this->faker->numberBetween(1, 10),
             'user_id' => \App\Models\User::factory(),
             'voucher_id' => \App\Models\Voucher::factory(),
+            'slug' => $this->faker->slug,
         ];
     }
 }

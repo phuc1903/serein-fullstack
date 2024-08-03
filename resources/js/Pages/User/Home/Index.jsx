@@ -16,7 +16,7 @@ import { Link } from "@inertiajs/react";
 import SvgImage from "@/Component/ImageSvg";
 import Product from "@/Component/Product";
 
-function Home({ productNews, productBestsellers }) {
+function Home({ productNews, productBestsellers, orders}) {
     return (
         <>
             <SvgImage />
@@ -234,7 +234,7 @@ function Home({ productNews, productBestsellers }) {
                     </div>
                 </div>
             </section>
-
+            <pre>{JSON.stringify(orders, undefined, 2)}</pre>
             <section
                 className="bg-light-blue overflow-hidden my-5"
                 id="yearly-sale"

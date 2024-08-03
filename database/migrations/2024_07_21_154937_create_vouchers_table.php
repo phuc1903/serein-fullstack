@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('discount_max')->nullable();
             $table->integer('quantity')->default(50)->nullable();
             $table->integer('user_count')->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

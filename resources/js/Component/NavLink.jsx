@@ -1,15 +1,18 @@
+import { Link } from "@inertiajs/react";
 
-function NavLink() {
+function NavLink({title, href}) {
     return (  
-        <li className="nav-item">
-            <a
-                className="nav-link active"
-                aria-current="page"
-                href="index.html"
-            >
-                Home
-            </a>
-        </li>
+        <>
+            <li className="nav-item">
+                <Link
+                    className="nav-link"
+                    aria-current="page"
+                    href={href}
+                >
+                    {title}
+                </Link>
+            </li>
+        </>
     );
 }
 

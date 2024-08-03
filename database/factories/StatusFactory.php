@@ -18,6 +18,7 @@ class StatusFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
+            'slug' => $this->faker->slug,
         ];
     }
 }

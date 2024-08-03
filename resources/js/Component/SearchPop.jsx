@@ -41,7 +41,7 @@ function SearchPop({addClass, onClose}) {
                     />
                     <button type="submit" className="search-submit">
                         <svg className="search">
-                            <use xlink:href="#search"></use>
+                            <use xlinkHref="#search"></use>
                         </svg>
                     </button>
                 </form>

@@ -14,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::with('categories')->latest()->get();
+        // dd($products);
+        return inertia('Admin/Product/Index', ['products' => $products]);
     }
 
     /**
@@ -38,7 +40,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return inertia('Admin/Product/Show', ['product' => $product]);
     }
 
     /**

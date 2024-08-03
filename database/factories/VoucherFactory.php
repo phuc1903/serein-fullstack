@@ -23,6 +23,7 @@ class VoucherFactory extends Factory
             'discount_max' => $this->faker->numberBetween(50, 200),
             'quantity' => 50,
             'user_count' => $this->faker->numberBetween(1, 10),
+            'slug' => $this->faker->slug,
         ];
     }
 }

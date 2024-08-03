@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('banner_show')->default(true)->nullable();
             $table->string('action', 30)->nullable();
             $table->string('background', 255)->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

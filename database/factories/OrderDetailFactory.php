@@ -23,6 +23,7 @@ class OrderDetailFactory extends Factory
             'product_price' => $this->faker->numberBetween(1000, 10000),
             'order_id' => Order::inRandomOrder()->first()->id ?? Order::factory(),
             'product_id' => Product::inRandomOrder()->first()->id ?? Product::factory(),
+            'slug' => $this->faker->slug,
         ];
     }
 }

@@ -1,4 +1,9 @@
+import { Link } from "@inertiajs/react";
+import { useRoute } from 'V/tightenco/ziggy';
+
 function LayoutAdmin({ children }) {
+
+    const route = useRoute();
     return (
         <main>
             <div className="container-fluid">
@@ -8,7 +13,7 @@ function LayoutAdmin({ children }) {
                             <img
                                 alt=""
                                 className="w-100 h-100"
-                                src="../img/logo3.png"
+                                src="images/logo3.png"
                             />
                         </a>
                         <div className="">
@@ -36,27 +41,27 @@ function LayoutAdmin({ children }) {
                                 >
                                     <ul>
                                         <li>
-                                            <a
+                                            <Link
                                                 className="siderbar-item siderbar-general active"
-                                                href="#"
+                                                href={route('dashboard')}
                                             >
                                                 <span className="siderbar-item-icon siderbar-icon-general" />
                                                 <p className="siderbar-item-content siderbar-content-general m-0">
                                                     Dashboard
                                                 </p>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li />
                                         <li>
-                                            <a
+                                            <Link
                                                 className="siderbar-item siderbar-general"
-                                                href="#"
+                                                href={route('product.index')}
                                             >
                                                 <span className="siderbar-item-icon siderbar-icon-general" />
                                                 <p className="siderbar-item-content siderbar-content-general m-0">
                                                     Quản lý sản phẩm
                                                 </p>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
                                             <a

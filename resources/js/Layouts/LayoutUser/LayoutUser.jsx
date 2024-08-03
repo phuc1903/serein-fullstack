@@ -1,18 +1,21 @@
 import React, {useState} from "react";
 import { Link } from "@inertiajs/react";
-import clsx from 'clsx';
+import clsx from "clsx";
+import {useRoute} from "../../../../vendor/tightenco/ziggy";
 
-import styles from './LayoutUserStyle.module.scss';
+import styles from "./LayoutUserStyle.module.scss";
 import SvgImage from "@/Component/ImageSvg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
 import SearchPop from "@/Component/SearchPop";
+// import { NavLink } from '@/Component/NavLink';
+import NavLink from "@/Component/NavLink";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 function LayoutUser({ children }) {
+    const route = useRoute();
 
     const classes = clsx(styles.test)
-
     const [isVisible,setIsVisible] = useState(false);
 
     const toggleSearchPopup = (event) => {
@@ -35,7 +38,7 @@ function LayoutUser({ children }) {
                         className="navbar navbar-expand-lg navbar-light h-100"
                     >
                         <div className="container-fluid h-100">
-                            <Link className="navbar-brand h-100 logo" href="#">
+                            <Link className="navbar-brand h-100 logo" href={route('home')}>
                                 <img
                                     src="images/logo3.png"
                                     alt=""
@@ -58,15 +61,7 @@ function LayoutUser({ children }) {
                                 id="navbarSupportedContent"
                             >
                                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                                    <li className="nav-item">
-                                        <Link
-                                            className="nav-link active"
-                                            aria-current="page"
-                                            href="index.html"
-                                        >
-                                            Home
-                                        </Link>
-                                    </li>
+                                    <NavLink title="Home" href={route('home')}/>
                                     <li className="nav-item dropdown">
                                         <Link
                                             className="nav-link dropdown-toggle"
@@ -111,33 +106,21 @@ function LayoutUser({ children }) {
                                             </li>
                                         </ul>
                                     </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            className="nav-link"
-                                            href="about.html"
-                                        >
-                                            about
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            className="nav-link"
-                                            href="contact.html"
-                                        >
-                                            contact
-                                        </Link>
-                                    </li>
+                                    <NavLink title="About" href={route('about')}/>
+                                    <NavLink title="contact" href={route('contact')}/>
                                 </ul>
                                 <ul className="navbar-nav d-flex flex-row">
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Dropdown
+                                            <FontAwesomeIcon icon={faUser} />
                                         </a>
                                         <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Action</a></li>
-                                            <li><a className="dropdown-item" href="#">Another action</a></li>
+                                            <li><Link className="dropdown-item" href={route('dashboard')}>Dashboard</Link></li>
+                                            <li><a className="dropdown-item" href="#">Quên mật khẩu</a></li>
+                                            <li><a className="dropdown-item" href="#">Đổi mật khẩu</a></li>
                                             <li><hr className="dropdown-divider"/></li>
-                                            <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                            <li><a className="dropdown-item" href="#">Đăng nhập</a></li>
+                                            <li><a className="dropdown-item" href="#">Đăng xuất</a></li>
                                         </ul>
                                     </li>
                                     <li onClick={toggleSearchPopup} className="nav-item search-button">

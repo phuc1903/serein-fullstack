@@ -25,6 +25,7 @@ class BannerFactory extends Factory
             'banner_show' => true,
             'action' => $this->faker->word,
             'background' => $this->faker->hexColor,
+            'slug' => $this->faker->slug,
         ];
     }
 }
